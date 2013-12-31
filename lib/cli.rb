@@ -4,6 +4,14 @@ class Cli
   end
 
   def message
-    "This sudoku is valid."
+    if @sudoku.valid?
+      if @sudoku.incomplete?
+        "This sudoku is valid, but incomplete."
+      else
+        "This sudoku is valid."
+      end
+    else
+      "This sudoku is invalid."
+    end
   end
 end
